@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.discord.bot.app-merged_res-33:/layout_item_server.xml.flat",
+        "source": "com.discord.bot.app-main-35:/layout/item_server.xml"
+    },
+    {
+        "merged": "com.discord.bot.app-merged_res-33:/layout_activity_main.xml.flat",
+        "source": "com.discord.bot.app-main-35:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.discord.bot.app-merged_res-33:/drawable_ic_launcher.xml.flat",
+        "source": "com.discord.bot.app-main-35:/drawable/ic_launcher.xml"
+    }
+]

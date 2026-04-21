@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#313338">
+
+    <!-- Login Layout -->
+    <LinearLayout
+        android:id="@+id/loginLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:background="#313338">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discord Bot"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login with Bot Token"
+            android:textColor="#B5BAC1"
+            android:textSize="14sp"
+            android:layout_marginBottom="32dp"/>
+
+        <EditText
+            android:id="@+id/tokenInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Bot Token"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#949BA4"
+            android:background="#1E1F22"
+            android:padding="12dp"
+            android:inputType="textPassword"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Login"
+            android:textColor="#FFFFFF"
+            android:background="#5865F2"
+            android:onClick="onLoginClick"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#DA373C"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+    <!-- Main Layout -->
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:background="#313338">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:background="#1E1F22">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Discord Bot"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Logout"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:background="#DA373C"
+                android:onClick="onLogoutClick"/>
+
+        </LinearLayout>
+
+        <!-- Tab Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:background="#2B2D31">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Servers"
+                android:textColor="#B5BAC1"
+                android:background="#2B2D31"
+                android:onClick="onServersClick"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="DMs"
+                android:textColor="#B5BAC1"
+                android:background="#2B2D31"
+                android:onClick="onDMsClick"/>
+
+        </LinearLayout>
+
+        <!-- Status -->
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#B5BAC1"
+            android:padding="12dp"
+            android:textSize="12sp"/>
+
+        <!-- Server List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/serverListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#313338"/>
+
+        <!-- DM List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dmListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#313338"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>

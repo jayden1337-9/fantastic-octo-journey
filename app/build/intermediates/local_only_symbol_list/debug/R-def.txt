@@ -1,0 +1,13 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_launcher
+id dmListView
+id iconView
+id loginLayout
+id mainLayout
+id nameView
+id serverListView
+id statusText
+id tokenInput
+layout activity_main
+layout item_server
