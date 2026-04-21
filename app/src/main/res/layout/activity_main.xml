@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="#313338">
 
-    <!-- Login Layout -->
+    <!-- LOGIN SCREEN -->
     <LinearLayout
         android:id="@+id/loginLayout"
         android:layout_width="match_parent"
@@ -58,10 +58,9 @@
             android:layout_height="wrap_content"
             android:textColor="#DA373C"
             android:layout_marginTop="16dp"/>
-
     </LinearLayout>
 
-    <!-- Main Layout -->
+    <!-- MAIN SCREEN -->
     <LinearLayout
         android:id="@+id/mainLayout"
         android:layout_width="match_parent"
@@ -70,7 +69,7 @@
         android:visibility="gone"
         android:background="#313338">
 
-        <!-- Header -->
+        <!-- HEADER -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -96,10 +95,9 @@
                 android:textSize="12sp"
                 android:background="#DA373C"
                 android:onClick="onLogoutClick"/>
-
         </LinearLayout>
 
-        <!-- Tab Buttons -->
+        <!-- TAB BUTTONS -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -123,10 +121,9 @@
                 android:textColor="#B5BAC1"
                 android:background="#2B2D31"
                 android:onClick="onDMsClick"/>
-
         </LinearLayout>
 
-        <!-- Status -->
+        <!-- STATUS -->
         <TextView
             android:id="@+id/statusText"
             android:layout_width="match_parent"
@@ -135,20 +132,36 @@
             android:padding="12dp"
             android:textSize="12sp"/>
 
-        <!-- Server List -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/serverListView"
+        <!-- SERVERS WRAPPER -->
+        <LinearLayout
+            android:id="@+id/serversLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#313338"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-        <!-- DM List -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/dmListView"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/serverListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#313338"/>
+        </LinearLayout>
+
+        <!-- DMS WRAPPER -->
+        <LinearLayout
+            android:id="@+id/dmsLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#313338"
-            android:visibility="gone"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dmListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#313338"/>
+        </LinearLayout>
 
     </LinearLayout>
 
