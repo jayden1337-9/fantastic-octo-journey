@@ -4,11 +4,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class ServerAdapter extends RecyclerView.Adapter<ServerAdapter.ViewHolder> {
+
     private List<ServerItem> items;
     private OnItemClickListener listener;
 
@@ -28,17 +31,21 @@ public class ServerAdapter extends RecyclerView.Adapter<ServerAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-            .inflate(R.layout.item_server, parent, false);
+                .inflate(R.layout.item_server, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         ServerItem item = items.get(position);
+
         holder.nameView.setText(item.name);
 
-        if (item.name.length() > 0) {
-            holder.iconView.setText(String.valueOf(item.name.charAt(0)).toUpperCase());
+        if (item.name != null && item.name.length() > 0) {
+            holder.iconView.setText(
+                    String.valueOf(item.name.charAt(0)).toUpperCase()
+            );
         } else {
             holder.iconView.setText("?");
         }
@@ -52,14 +59,17 @@ public class ServerAdapter extends RecyclerView.Adapter<ServerAdapter.ViewHolder
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return items != null ? items.size() : 0;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView iconView, nameView;
 
-        ViewHolder(View itemView) {
+        TextView iconView;
+        TextView nameView;
+
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
+
             iconView = itemView.findViewById(R.id.iconView);
             nameView = itemView.findViewById(R.id.nameView);
         }
