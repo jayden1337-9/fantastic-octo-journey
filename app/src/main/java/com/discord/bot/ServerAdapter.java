@@ -1,5 +1,11 @@
 package com.discord.bot;
 
+public class ServerItem {
+    public String name;
+
+    public ServerItem(String name) {
+        this.name = name;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
