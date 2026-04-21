@@ -1,11 +1,5 @@
 package com.discord.bot;
 
-public class ServerItem {
-    public String name;
-
-    public ServerItem(String name) {
-        this.name = name;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,9 +40,9 @@ public class ServerAdapter extends RecyclerView.Adapter<ServerAdapter.ViewHolder
 
         ServerItem item = items.get(position);
 
-        holder.nameView.setText(item.name);
+        holder.nameView.setText(item.name != null ? item.name : "Unknown");
 
-        if (item.name != null && item.name.length() > 0) {
+        if (item.name != null && !item.name.isEmpty()) {
             holder.iconView.setText(
                     String.valueOf(item.name.charAt(0)).toUpperCase()
             );
